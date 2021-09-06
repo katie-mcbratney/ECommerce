@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var productManager: ProductManager
+    @ObservedObject var cartManager: CartManager
     let user = User(fname: "Katie", lname: "McBratney", image: "sample_profile")
     
     init() {
         productManager = ProductManager()
+        cartManager = CartManager()
     }
     
     var body: some View {
@@ -29,7 +31,7 @@ struct ContentView: View {
                     NavigationLink(destination: UserView(user: user)) {
                         Label("User Profile", systemImage: "24.circle")
                     }
-                    NavigationLink(destination: Image("sofia")) {
+                    NavigationLink(destination: CartView(cartProducts: cartManager.cartProducts)) {
                         Label("Shopping Cart", systemImage:"cart")
                     }
                 }
