@@ -20,24 +20,44 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                ScrollView{
-                    Text("Hello")
-                }
-                HStack {
-                    NavigationLink(destination: ProductListView(products: productManager.products)) {
-                        Label("Products", systemImage: "42.circle")
+            ZStack {
+                Color("background").ignoresSafeArea()
+                VStack {
+                    ScrollView{
+
                     }
-                    NavigationLink(destination: UserView(user: user)) {
-                        Label("User Profile", systemImage: "24.circle")
+                    HStack(spacing: 40.0) {
+                        NavigationLink(destination: ProductListView(products: productManager.products)) {
+                            VStack{
+                                Image(systemName: "bag")
+                                    .resizable()
+                                    .frame(width: 50, height: 50, alignment: .center)
+                                Text("Products")
+                            }.foregroundColor(Color("Products-background"))
+                            
+                        }
+                        NavigationLink(destination: UserView(user: user)) {
+                            VStack {
+                                Image(systemName: "person")
+                                    .resizable()
+                                    .frame(width: 50, height: 50, alignment: .center)
+                                Text("User Profile")
+                            }.foregroundColor(Color("User-background"))
+                        }
+                        NavigationLink(destination: CartView(cartProducts: cartManager.cartProducts)) {
+                            VStack {
+                                Image(systemName: "cart")
+                                    .resizable()
+                                    .frame(width: 50, height: 50, alignment: .center)
+                                Text("Shopping Cart")
+                            }.foregroundColor(Color("cart-background"))
+                        }
                     }
-                    NavigationLink(destination: CartView(cartProducts: cartManager.cartProducts)) {
-                        Label("Shopping Cart", systemImage:"cart")
-                    }
-                }
+                }.navigationTitle("Home")
             }
             
-        }
+            
+        }.accentColor(Color("text-wb"))
         
     }
 }

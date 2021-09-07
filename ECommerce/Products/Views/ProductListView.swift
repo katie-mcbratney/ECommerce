@@ -16,17 +16,21 @@ struct ProductListView: View {
     }
     
     var body: some View {
-        VStack {
-            ScrollView {
-//                ProductView(image: "icons8-software-24", name: "Sample", price: 10.99)
-//                ProductView(image: "icons8-software-24", name: "Sample", price: 10.99)
-//                ProductView(image: "icons8-software-24", name: "Sample", price: 10.99)
-                                
-                ForEach(products) { product in
-                    ProductView(image: product.image, name: product.title, price: product.price)
+        ZStack {
+            Color("Products-background").ignoresSafeArea()
+            VStack {
+                ScrollView {
+                    ProductView(image: "icons8-software-24", name: "Sample", price: 10.99).background(Color("background-wb"))
+                    ProductView(image: "icons8-software-24", name: "Sample", price: 10.99).background(Color("background-wb"))
+                    ProductView(image: "icons8-software-24", name: "Sample", price: 10.99).background(Color("background-wb"))
+                                    
+                    ForEach(products) { product in
+                        ProductView(image: product.image, name: product.title, price: product.price).background(Color("background-wb"))
+                    }
                 }
             }
-        }
+        }.navigationTitle("All Products")
+        
     }
     
 }
