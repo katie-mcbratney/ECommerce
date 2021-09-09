@@ -9,10 +9,9 @@ import SwiftUI
 
 struct EditView: View {
     
-    @Binding var fname: String
-    @Binding var lname: String
-    @Binding var phone: String
-    @Binding var email: String
+    @EnvironmentObject var userManager: UserManager
+    @Environment(\.presentationMode) var presentation
+    
     
     var body: some View {
         ZStack {
@@ -31,15 +30,30 @@ struct EditView: View {
                         Text("Email: ")
                     }
                     VStack(spacing: 20) {
-                        TextField("Ex: John", text: $fname)
-                        TextField("Ex: Smith", text: $lname)
-                        TextField("(###)-###-####", text: $phone)
-                        TextField("Ex: johnsmith@gmail.com", text: $email)
+                        TextField("Ex: John", text: $userManager.user.fname)
+                        TextField("Ex: Smith", text: $userManager.user.lname)
+                        TextField("(###)-###-####", text: $userManager.user.phone)
+                        TextField("Ex: johnsmith@gmail.com", text: $userManager.user.email)
                     }
                 }
-                Button("Submit") {
-                    
+                HStack (spacing: 70){
+                    Button(action: {
+                        userManager.addUserData()
+                        presentation.wrappedValue.dismiss()
+                    }, label: {
+                        Text("Submit")
+                    }).foregroundColor(Color("background-wb"))
+                    .background(RoundedRectangle(cornerRadius: 20)
+                                    .fill(Color("user-button"))
+                                    .frame(width:100, height:30))
+                    Button(action:{presentation.wrappedValue.dismiss()}, label: {Text("Cancel")})
+                        .foregroundColor(Color("background-wb"))
+                        .background(RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color("user-button"))
+                                        .frame(width:100, height:30))
                 }
+                //.onDisappear(perfom: userManager.deInitData())
+                
             }
             
         }
@@ -51,7 +65,8 @@ struct EditView: View {
 }
 
 struct EditView_Previews: PreviewProvider {
+    //@EnvironmentObject var userManager = UserManager()
     static var previews: some View {
-        EditView(fname: .constant(""), lname: .constant(""),phone: .constant(""),email: .constant(""))
+        EditView()
     }
 }

@@ -11,11 +11,13 @@ struct ContentView: View {
     
     @ObservedObject var productManager: ProductManager
     @ObservedObject var cartManager: CartManager
-    let user = User(fname: "Katie", lname: "McBratney", image: "sample_profile")
+    @ObservedObject var userManager: UserManager
+    //@StateObject var userManager = UserManager()
     
     init() {
         productManager = ProductManager()
         cartManager = CartManager()
+        userManager = UserManager()
     }
     
     var body: some View {
@@ -27,7 +29,7 @@ struct ContentView: View {
 
                     }
                     HStack(spacing: 40.0) {
-                        NavigationLink(destination: ProductListView(products: productManager.products)) {
+                        NavigationLink(destination: ProductListView(productManager: productManager, cartManager: cartManager)) {
                             VStack{
                                 Image(systemName: "bag")
                                     .resizable()
@@ -36,7 +38,7 @@ struct ContentView: View {
                             }.foregroundColor(Color("Products-background"))
                             
                         }
-                        NavigationLink(destination: UserView(user: user)) {
+                        NavigationLink(destination: UserView(userManager: userManager)) {
                             VStack {
                                 Image(systemName: "person")
                                     .resizable()
@@ -44,7 +46,7 @@ struct ContentView: View {
                                 Text("User Profile")
                             }.foregroundColor(Color("User-background"))
                         }
-                        NavigationLink(destination: CartView(cartProducts: cartManager.cartProducts)) {
+                        NavigationLink(destination: CartView(cartManager: cartManager)) {
                             VStack {
                                 Image(systemName: "cart")
                                     .resizable()

@@ -28,8 +28,6 @@ final class ProductManager: ObservableObject, NetworkDelegate {
     }
     
     
-    
-    
         
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Product: Codable, Identifiable {
+struct Product: Codable, Identifiable, Equatable {
     
     var id: UUID {return UUID()}
     let title: String

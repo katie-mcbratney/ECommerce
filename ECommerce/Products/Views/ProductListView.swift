@@ -9,23 +9,35 @@ import SwiftUI
 
 struct ProductListView: View {
     
-    @State var products: [Product]
-    
-    init(products: [Product]) {
-        self.products = products
-    }
+    @ObservedObject var productManager: ProductManager
+    @ObservedObject var cartManager: CartManager
+    @State private var showingAlert = false
+
     
     var body: some View {
         ZStack {
             Color("Products-background").ignoresSafeArea()
-            VStack {
-                ScrollView {
-                    ProductView(image: "icons8-software-24", name: "Sample", price: 10.99).background(Color("background-wb"))
-                    ProductView(image: "icons8-software-24", name: "Sample", price: 10.99).background(Color("background-wb"))
-                    ProductView(image: "icons8-software-24", name: "Sample", price: 10.99).background(Color("background-wb"))
+            ScrollView {
+                VStack (spacing: 10){
                                     
-                    ForEach(products) { product in
-                        ProductView(image: product.image, name: product.title, price: product.price).background(Color("background-wb"))
+                    ForEach(productManager.products) { product in
+                        HStack (spacing: 20){
+                            ProductView(product: product, view: "Products")
+                            Button(action: {
+                                cartManager.addToCart(product)
+                                showingAlert.toggle()
+                            }, label: {
+                                Image(systemName: "plus")
+                                    .font(.title)
+                                    .foregroundColor(Color("text-wb"))
+                            }).alert(isPresented: $showingAlert, content: {
+                                Alert(title: Text("Added to Shopping Cart"), dismissButton: Alert.Button.default(Text("Okay")))
+                            })
+                        }.padding(15)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(Color("background-wb"))
+                        //.cornerRadius(60)
+                        
                     }
                 }
             }
@@ -38,7 +50,9 @@ struct ProductListView: View {
 
 struct ProductListView_Previews: PreviewProvider {
     static var previews: some View {
+        
         let productManager = ProductManager()
-        ProductListView(products: productManager.products)
+        let cartManager = CartManager()
+        ProductListView(productManager: productManager, cartManager: cartManager)
     }
 }

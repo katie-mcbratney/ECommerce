@@ -27,6 +27,7 @@
 		02E4409926E719210051B4B5 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4409826E719210051B4B5 /* EditView.swift */; };
 		02E4409C26E79D6D0051B4B5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 02E4409B26E79D6D0051B4B5 /* Realm */; };
 		02E4409E26E79D6D0051B4B5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02E4409D26E79D6D0051B4B5 /* RealmSwift */; };
+		02E440A026E7A9310051B4B5 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4409F26E7A9310051B4B5 /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		02E4409126E707DB0051B4B5 /* ImageCacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
 		02E4409226E707DB0051B4B5 /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		02E4409826E719210051B4B5 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		02E4409F26E7A9310051B4B5 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				02E4406826E6AFD80051B4B5 /* Views */,
 				02E4406726E6AFD00051B4B5 /* Models */,
+				02E4409F26E7A9310051B4B5 /* UserManager.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				02E4403A26E68FD70051B4B5 /* ECommerceApp.swift in Sources */,
 				02E4405E26E693CA0051B4B5 /* Product.swift in Sources */,
 				02E4406A26E6AFE80051B4B5 /* UserView.swift in Sources */,
+				02E440A026E7A9310051B4B5 /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
