@@ -20,7 +20,6 @@ struct Network {
                 let task = session.dataTask(with: url){(data, response, error) in
                     if(error != nil) {
                         self.delegate?.didFailWithError(error: error!)
-                        print("Error: \(error!)")
                         return
                     }
                     if let safeData = data {

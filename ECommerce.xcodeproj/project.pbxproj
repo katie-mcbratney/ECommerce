@@ -28,7 +28,19 @@
 		02E4409C26E79D6D0051B4B5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 02E4409B26E79D6D0051B4B5 /* Realm */; };
 		02E4409E26E79D6D0051B4B5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02E4409D26E79D6D0051B4B5 /* RealmSwift */; };
 		02E440A026E7A9310051B4B5 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4409F26E7A9310051B4B5 /* UserManager.swift */; };
+		02E440A826EABCC60051B4B5 /* ECommerceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E440A726EABCC60051B4B5 /* ECommerceTests.swift */; };
+		02E440B026EBED530051B4B5 /* MockNetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E440AF26EBED530051B4B5 /* MockNetworkDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02E440AA26EABCC70051B4B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E4402E26E68FD70051B4B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02E4403526E68FD70051B4B5;
+			remoteInfo = ECommerce;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02E4403626E68FD70051B4B5 /* ECommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +64,10 @@
 		02E4409226E707DB0051B4B5 /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		02E4409826E719210051B4B5 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		02E4409F26E7A9310051B4B5 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		02E440A526EABCC60051B4B5 /* ECommerceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECommerceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02E440A726EABCC60051B4B5 /* ECommerceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECommerceTests.swift; sourceTree = "<group>"; };
+		02E440A926EABCC70051B4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02E440AF26EBED530051B4B5 /* MockNetworkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +80,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02E440A226EABCC60051B4B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -71,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				02E4403826E68FD70051B4B5 /* ECommerce */,
+				02E440A626EABCC60051B4B5 /* ECommerceTests */,
 				02E4403726E68FD70051B4B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				02E4403626E68FD70051B4B5 /* ECommerce.app */,
+				02E440A526EABCC60051B4B5 /* ECommerceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +215,16 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		02E440A626EABCC60051B4B5 /* ECommerceTests */ = {
+			isa = PBXGroup;
+			children = (
+				02E440A726EABCC60051B4B5 /* ECommerceTests.swift */,
+				02E440A926EABCC70051B4B5 /* Info.plist */,
+				02E440AF26EBED530051B4B5 /* MockNetworkDelegate.swift */,
+			);
+			path = ECommerceTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +249,24 @@
 			productReference = 02E4403626E68FD70051B4B5 /* ECommerce.app */;
 			productType = "com.apple.product-type.application";
 		};
+		02E440A426EABCC60051B4B5 /* ECommerceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02E440AC26EABCC70051B4B5 /* Build configuration list for PBXNativeTarget "ECommerceTests" */;
+			buildPhases = (
+				02E440A126EABCC60051B4B5 /* Sources */,
+				02E440A226EABCC60051B4B5 /* Frameworks */,
+				02E440A326EABCC60051B4B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02E440AB26EABCC70051B4B5 /* PBXTargetDependency */,
+			);
+			name = ECommerceTests;
+			productName = ECommerceTests;
+			productReference = 02E440A526EABCC60051B4B5 /* ECommerceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -225,6 +278,10 @@
 				TargetAttributes = {
 					02E4403526E68FD70051B4B5 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					02E440A426EABCC60051B4B5 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 02E4403526E68FD70051B4B5;
 					};
 				};
 			};
@@ -245,6 +302,7 @@
 			projectRoot = "";
 			targets = (
 				02E4403526E68FD70051B4B5 /* ECommerce */,
+				02E440A426EABCC60051B4B5 /* ECommerceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +314,13 @@
 			files = (
 				02E4404126E68FDD0051B4B5 /* Preview Assets.xcassets in Resources */,
 				02E4403E26E68FDD0051B4B5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02E440A326EABCC60051B4B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +351,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02E440A126EABCC60051B4B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02E440A826EABCC60051B4B5 /* ECommerceTests.swift in Sources */,
+				02E440B026EBED530051B4B5 /* MockNetworkDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02E440AB26EABCC70051B4B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02E4403526E68FD70051B4B5 /* ECommerce */;
+			targetProxy = 02E440AA26EABCC70051B4B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		02E4404326E68FDD0051B4B5 /* Debug */ = {
@@ -447,6 +529,46 @@
 			};
 			name = Release;
 		};
+		02E440AD26EABCC70051B4B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5665H43395;
+				INFOPLIST_FILE = ECommerceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = katiemcb.ECommerceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECommerce.app/ECommerce";
+			};
+			name = Debug;
+		};
+		02E440AE26EABCC70051B4B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5665H43395;
+				INFOPLIST_FILE = ECommerceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = katiemcb.ECommerceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECommerce.app/ECommerce";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -464,6 +586,15 @@
 			buildConfigurations = (
 				02E4404626E68FDD0051B4B5 /* Debug */,
 				02E4404726E68FDD0051B4B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02E440AC26EABCC70051B4B5 /* Build configuration list for PBXNativeTarget "ECommerceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02E440AD26EABCC70051B4B5 /* Debug */,
+				02E440AE26EABCC70051B4B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

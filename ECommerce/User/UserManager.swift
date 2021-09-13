@@ -26,12 +26,7 @@ class UserManager: ObservableObject {
     func fetchData() {
         print("fetching data...")
         guard let dbRef = try? Realm() else {print("failed to fetch data"); return}
-        let results = dbRef.objects(User.self)
-        print(results.count)
-        self.user = results.first ?? User()
-        print(results)
-        print("Name: \(results.last!.fname)")
-        print("Name: \(results[0].fname)")
+        user = dbRef.objects(User.self).first ?? User()
     }
     
     func addUserData() {
@@ -46,7 +41,6 @@ class UserManager: ObservableObject {
         
         try? dbRef.write {
             let previouses = dbRef.objects(User.self)
-            //print("Count: \(previouses.count)")
             dbRef.delete(previouses)
             dbRef.add(tempUser)
         }

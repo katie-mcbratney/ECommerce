@@ -31,7 +31,7 @@ struct UserView: View {
             VStack(alignment: .center, spacing: 15.0) {
                 Text("\(userManager.user.fname) \(userManager.user.lname)").font(.largeTitle)
                     .padding(.top, 50)
-                Image(userManager.user.image)
+                Image(userManager.user.image != "" ? userManager.user.image : "anonymous_user")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width:150, alignment: .center)
